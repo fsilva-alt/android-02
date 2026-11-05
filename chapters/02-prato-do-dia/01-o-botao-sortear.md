@@ -1,21 +1,21 @@
 ---
-duration: 14
+duration: 20
 ---
 
 # O botão Sortear
 
 {.lead}
-O **Prato do Dia** mostra um prato e não tem como trocar. Falta um botão, e falta a tela perceber que algo mudou: o Compose só redesenha quando um **estado** muda.
+O **Prato do Dia** mostra um prato e não tem como trocar. Falta um botão, falta a tela perceber que algo mudou, e falta escolher a imagem certa para cada número sorteado: o Compose só redesenha quando um **estado** muda, e o `when` transforma esse estado no que aparece.
 
 ::::columns
 :::card Neste módulo
 - `Button` e `onClick`: o código que roda a cada toque.
-- `(1..6).random()`: um número sorteado.
 - `mutableStateOf` e `remember`: o estado que faz a tela ser redesenhada.
+- `when`: um valor para cada número.
 :::
 :::card Projeto
 - Abra `exercicios/02-o-botao-sortear` (**File › Open**).
-- App **Prato do Dia**. A tela está montada; faltam o botão e o estado.
+- App **Prato do Dia**. A tela está montada; faltam o botão, o estado e a imagem de cada prato.
 :::
 ::::
 
@@ -25,12 +25,12 @@ O **Prato do Dia** mostra um prato e não tem como trocar. Falta um botão, e fa
 <figcaption>Como começa: sempre brigadeiro, sem botão.</figcaption>
 </figure>
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/02-meio.png" alt="Tela do Prato do Dia com o brigadeiro e o botão Sortear"></div></div>
-<figcaption>No meio do caminho: o botão sorteia, a tela não sai do brigadeiro.</figcaption>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/02-meio.png" alt="Tela do Prato do Dia com o nome Coxinha e a imagem de um brigadeiro"></div></div>
+<figcaption>No meio do caminho: o nome muda com o sorteio, a imagem não.</figcaption>
 </figure>
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/02-depois.png" alt="Tela do Prato do Dia com um pudim de leite e o botão Sortear"></div></div>
-<figcaption>Como fica: cada toque em Sortear mostra um prato.</figcaption>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/02-depois.png" alt="Tela do Prato do Dia com o nome Coxinha e a imagem de uma coxinha"></div></div>
+<figcaption>Como fica: cada toque em Sortear mostra um prato, com imagem e nome combinando.</figcaption>
 </figure>
 </div>
 
@@ -58,7 +58,7 @@ O botão não sabe o que fazer. Ele só avisa que foi tocado; o que acontece est
 - `1..6` é um intervalo: 1, 2, 3, 4, 5 e 6.
 - `random()` devolve um desses números, ao acaso.
 
-O projeto guarda o prato atual em `prato`, um número de 1 a 6. Dois `when` transformam esse número na imagem e no nome; eles são o assunto do módulo 3. Por enquanto basta saber que **mudar `prato` deveria mudar a tela**.
+O projeto guarda o prato atual em `prato`, um número de 1 a 6. **Mudar `prato` deveria mudar a tela.**
 
 ## A tela é o resultado de uma função
 
@@ -85,17 +85,48 @@ var prato by remember { mutableStateOf(1) }
 | `remember { … }` | Guarda o valor entre uma recomposição e outra. Sem ele, cada chamada de `PratoDoDia()` criaria o estado de novo, valendo 1. |
 | `by` | Deixa usar `prato` como variável comum: `prato = 3`, `when (prato)`. |
 
+## when devolve um valor
+
+O estado guarda só um número. Quem transforma esse número em imagem e em nome é o `when`. O do nome já está no projeto:
+
+```kotlin
+val nome = when (prato) {
+    1 -> R.string.brigadeiro
+    2 -> R.string.pao_de_queijo
+    3 -> R.string.bolo_de_cenoura
+    4 -> R.string.pudim
+    5 -> R.string.coxinha
+    else -> R.string.acai
+}
+```
+
+- O `when` compara `prato` com cada linha, de cima para baixo.
+- O que está à direita de `->`, na primeira linha que casar, vira o valor de `nome`.
+- `else` cobre o que sobrou. Quando o `when` devolve um valor, ele é obrigatório.
+
+`R.string.coxinha` e `R.drawable.coxinha` são números inteiros, os identificadores dos recursos. Por isso cabem em uma variável e podem ser entregues a `stringResource()` e `painterResource()`.
+
+## Estado mínimo
+
+| | No projeto | Como surge |
+| --- | --- | --- |
+| **Estado** | `prato` | Muda no toque. |
+| **Calculado** | `imagem`, `nome` | Saem de `prato`, a cada recomposição. |
+
+Guarde como estado só o que não dá para calcular. Se imagem e nome fossem estados também, seria preciso atualizar os três a cada toque, e um dia eles iriam discordar.
+
 ## Para saber mais
 
 - [Botão](https://developer.android.com/develop/ui/compose/components/button?hl=pt-br): os tipos de botão do Material 3 e quando usar cada um.
-- [Estado e Jetpack Compose](https://developer.android.com/develop/ui/compose/state?hl=pt-br): `remember`, `mutableStateOf` e recomposição.
+- [Estado e Jetpack Compose](https://developer.android.com/develop/ui/compose/state?hl=pt-br): `remember`, `mutableStateOf`, recomposição e por que guardar pouco estado.
 - [Ciclo de vida de funções que podem ser compostas](https://developer.android.com/develop/ui/compose/lifecycle?hl=pt-br): quando e por que o Compose recompõe.
-- [Lambdas](https://kotlinlang.org/docs/lambdas.html) e [intervalos](https://kotlinlang.org/docs/ranges.html) na documentação do Kotlin (em inglês).
+- [Recursos no Compose](https://developer.android.com/develop/ui/compose/resources?hl=pt-br): o que são `R.drawable` e `R.string`.
+- [Lambdas](https://kotlinlang.org/docs/lambdas.html), [intervalos](https://kotlinlang.org/docs/ranges.html) e [`when`](https://kotlinlang.org/docs/control-flow.html#when-expressions-and-statements) na documentação do Kotlin (em inglês).
 - Codelab oficial: [Criar um app Dice Roller interativo](https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app?hl=pt-br), a mesma ideia com um dado no lugar dos pratos.
 
 ## O desafio
 
-O projeto tem dois `TODO`, numerados.
+O projeto tem três `TODO`, numerados.
 
 :::steps
 1. Rode o projeto. Aparece o brigadeiro, sem botão.
@@ -125,7 +156,21 @@ O projeto tem dois `TODO`, numerados.
    import androidx.compose.runtime.setValue
    ```
 
-7. Rode e toque em **Sortear**.
+7. Rode e toque em **Sortear**. O nome muda; a imagem fica no brigadeiro.
+8. **TODO 3.** Troque `val imagem = R.drawable.brigadeiro` por um `when`, na mesma ordem do `when` de `nome`:
+
+   ```kotlin title="MainActivity.kt" hl_lines="1-8"
+   val imagem = when (prato) {
+       1 -> R.drawable.brigadeiro
+       2 -> R.drawable.pao_de_queijo
+       3 -> R.drawable.bolo_de_cenoura
+       4 -> R.drawable.pudim
+       5 -> R.drawable.coxinha
+       else -> R.drawable.acai
+   }
+   ```
+
+9. Rode e sorteie até ver os seis pratos.
 :::
 
 :::tip O aviso em `var prato`
@@ -144,7 +189,7 @@ Com o estado no lugar, o sorteio ainda pode repetir o número. Toque de novo.
 
 - [ ] O botão **Sortear** aparece abaixo do nome do prato.
 - [ ] O arquivo compila sem nada em vermelho.
-- [ ] Cada toque sorteia um prato; imagem e nome mudam juntos.
+- [ ] Cada toque sorteia um prato; imagem e nome mudam juntos e sempre combinam.
 
 ## Missão extra
 
@@ -181,6 +226,23 @@ Text(text = "Sorteios: $sorteios")
 Cada estado tem o seu `remember { mutableStateOf(…) }`. Uma lambda com mais de uma instrução ocupa várias linhas.
 :::
 
+:::exercise Doce ou salgado?
+Crie um terceiro `when` que devolve um texto: `"Doce"` para brigadeiro, bolo e pudim; `"Salgado"` para pão de queijo e coxinha; `"Gelado"` para o açaí. Mostre esse texto abaixo do nome. Dica: uma linha do `when` aceita vários valores separados por vírgula.
+:::
+
+:::solution
+```kotlin title="MainActivity.kt"
+val tipo = when (prato) {
+    1, 3, 4 -> "Doce"
+    2, 5 -> "Salgado"
+    else -> "Gelado"
+}
+
+// … abaixo do Text do nome:
+Text(text = tipo)
+```
+:::
+
 ## Teste o que aprendeu
 
 :::quiz Quando roda o código de `onClick = { prato = (1..6).random() }`?
@@ -199,4 +261,13 @@ Cada estado tem o seu `remember { mutableStateOf(…) }`. Uma lambda com mais de
 - [ ] O sorteio deixaria de ser aleatório
 
 `mutableStateOf` avisa o Compose da mudança, mas a recomposição chama a função inteira outra vez. É o `remember` que devolve o valor guardado em vez de criar um novo.
+:::
+
+:::quiz No `when` de `imagem`, o que acontece se `prato` valer 6?
+- [ ] Erro: não existe a linha `6 ->`
+- [x] Cai no `else`, e a imagem é a do açaí
+- [ ] A imagem fica vazia
+- [ ] Vale a primeira linha, a do brigadeiro
+
+Nenhuma das linhas de 1 a 5 casa com 6, então vale o `else`. Ele cobre qualquer valor que não foi listado.
 :::

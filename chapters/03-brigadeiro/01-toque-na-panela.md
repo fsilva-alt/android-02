@@ -2,10 +2,14 @@
 duration: 16
 ---
 
-# Toque na panela
+# Toque na panela (opcional)
 
 {.lead}
 Nem todo toque acontece em um botão. Com o modificador `clickable`, qualquer composable responde: uma imagem, um texto, um cartão inteiro. E, como brigadeiro não fica pronto com uma mexida só, a tela vai precisar de um segundo estado.
+
+:::info Módulo opcional
+Este módulo é prática: reforça o estado do módulo 2 em um app novo. Nenhum módulo seguinte depende dele. Com o tempo curto, siga para [Quantos convidados?](#quantos-convidados) e volte aqui depois.
+:::
 
 ::::columns
 :::card Neste módulo
@@ -14,22 +18,22 @@ Nem todo toque acontece em um botão. Com o modificador `clickable`, qualquer co
 - Dois estados na mesma tela, um mudando o outro.
 :::
 :::card Projeto
-- Abra `exercicios/05-toque-na-panela`.
+- Abra `exercicios/04-toque-na-panela`.
 - App **Brigadeiro**: a receita em quatro passos, parada no primeiro.
 :::
 ::::
 
 <div class="phones">
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/05-antes.png" alt="Tela do app Brigadeiro no passo 1: uma panela, uma lata de leite condensado e uma barra de chocolate"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/04-antes.png" alt="Tela do app Brigadeiro no passo 1: uma panela, uma lata de leite condensado e uma barra de chocolate"></div></div>
 <figcaption>Como começa: passo 1, e tocar na imagem não faz nada.</figcaption>
 </figure>
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/05-meio.png" alt="Tela do app Brigadeiro no passo 2, a panela no fogo com uma colher de pau, e o texto Toque na imagem para continuar"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/04-meio.png" alt="Tela do app Brigadeiro no passo 2, a panela no fogo com uma colher de pau, e o texto Toque na imagem para continuar"></div></div>
 <figcaption>No meio do caminho: o toque avança, mas um só já encerra o passo 2.</figcaption>
 </figure>
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/05-depois.png" alt="Tela do app Brigadeiro no passo 2 com a contagem de mexidas que faltam"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/04-depois.png" alt="Tela do app Brigadeiro no passo 2 com a contagem de mexidas que faltam"></div></div>
 <figcaption>Como fica: no passo 2, a contagem diminui a cada toque.</figcaption>
 </figure>
 </div>

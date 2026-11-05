@@ -1,0 +1,54 @@
+package com.example.livrodereceitas
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.ui.NavDisplay
+import com.example.livrodereceitas.ui.theme.ReceitasTheme
+
+// As chaves: uma para cada tela do app.
+data object Livro
+// TODO 1: crie a chave da tela da receita
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            ReceitasTheme {
+                LivroApp()
+            }
+        }
+    }
+}
+
+@Composable
+fun LivroApp() {
+    // A pilha de telas: a última chave da lista é a tela que aparece.
+    val pilha = remember { mutableStateListOf<Any>(Livro) }
+
+    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        NavDisplay(
+            backStack = pilha,
+            modifier = Modifier.padding(innerPadding),
+            onBack = { pilha.removeLastOrNull() },
+            entryProvider = entryProvider {
+                entry<Livro> {
+                    TelaLivro(
+                        aoVerReceita = { /* TODO 3: ponha a chave da receita na pilha */ }
+                    )
+                }
+                // TODO 2: crie a entrada da tela da receita
+            }
+        )
+    }
+}

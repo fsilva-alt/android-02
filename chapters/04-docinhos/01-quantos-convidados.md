@@ -14,22 +14,22 @@ Um campo de texto não guarda o que você digita. Quem guarda é um estado; o ca
 - `toIntOrNull()` e `?:`: texto que vira número sem derrubar o app.
 :::
 :::card Projeto
-- Abra `exercicios/06-quantos-convidados`.
+- Abra `exercicios/05-quantos-convidados`.
 - App **Docinhos**, a calculadora de brigadeiros da festa. O campo **Convidados** não guarda o que você digita, e o total está fixo em 0.
 :::
 ::::
 
 <div class="phones">
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/06-antes.png" alt="Tela do Docinhos com o campo Convidados vazio e o total de 0 brigadeiros"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/05-antes.png" alt="Tela do Docinhos com o campo Convidados vazio e o total de 0 brigadeiros"></div></div>
 <figcaption>Como começa: você digita e o campo continua vazio.</figcaption>
 </figure>
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/06-meio.png" alt="Tela do Docinhos com 20 convidados digitados e o total de 0 brigadeiros"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/05-meio.png" alt="Tela do Docinhos com 20 convidados digitados e o total de 0 brigadeiros"></div></div>
 <figcaption>No meio do caminho: 20 convidados, 0 brigadeiros.</figcaption>
 </figure>
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/06-depois.png" alt="Tela do Docinhos com 20 convidados, 80 brigadeiros e 2,7 latas de leite condensado"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/05-depois.png" alt="Tela do Docinhos com 20 convidados, 80 brigadeiros e 2,7 latas de leite condensado"></div></div>
 <figcaption>Como fica: 4 docinhos por convidado, 30 brigadeiros por lata.</figcaption>
 </figure>
 </div>
@@ -86,7 +86,7 @@ val brigadeiros = (convidados.toIntOrNull() ?: 0) * 4  // calculado a cada recom
 val latas = calcularLatas(brigadeiros)
 ```
 
-A cada tecla, `convidados` muda, a tela é recomposta e as duas contas são refeitas. É a mesma regra do módulo 3: estado é só o que não dá para calcular.
+A cada tecla, `convidados` muda, a tela é recomposta e as duas contas são refeitas. É a mesma regra do módulo 2: estado é só o que não dá para calcular.
 
 O projeto já traz duas funções prontas no fim do arquivo:
 

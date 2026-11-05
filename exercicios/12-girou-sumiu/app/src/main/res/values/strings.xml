@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Livro de Receitas</string>
+    <string name="receita_n">Receita %1$d de 6</string>
+    <string name="receita_n_favorita">Receita %1$d de 6 · ★ favorita</string>
+    <string name="brigadeiro">Brigadeiro</string>
+    <string name="pao_de_queijo">Pão de queijo</string>
+    <string name="bolo_de_cenoura">Bolo de cenoura</string>
+    <string name="pudim">Pudim de leite</string>
+    <string name="coxinha">Coxinha</string>
+    <string name="acai">Açaí na tigela</string>
+    <string name="brigadeiro_detalhes">30 unidades · 25 min</string>
+    <string name="pao_de_queijo_detalhes">25 unidades · 40 min</string>
+    <string name="bolo_de_cenoura_detalhes">8 porções · 50 min</string>
+    <string name="pudim_detalhes">10 fatias · 1 h 30 min</string>
+    <string name="coxinha_detalhes">30 unidades · 1 h 30 min</string>
+    <string name="acai_detalhes">2 tigelas · 10 min</string>
+    <string name="anterior">Anterior</string>
+    <string name="proxima">Próxima</string>
+
+    <!-- A tela da receita -->
+    <string name="ver_receita">Ver receita</string>
+    <string name="voltar">Voltar</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="modo_de_preparo">Modo de preparo</string>
+    <string name="brigadeiro_ingredientes">• 1 lata de leite condensado\n• 3 colheres (sopa) de chocolate em pó\n• 1 colher (sopa) de manteiga\n• Chocolate granulado</string>
+    <string name="brigadeiro_preparo">1. Leve ao fogo baixo o leite condensado, o chocolate e a manteiga.\n2. Mexa sem parar até soltar do fundo da panela.\n3. Deixe esfriar, enrole as bolinhas e passe no granulado.</string>
+    <string name="pao_de_queijo_ingredientes">• 500 g de polvilho azedo\n• 1 xícara de leite\n• 1/2 xícara de óleo\n• 2 ovos\n• 200 g de queijo meia cura ralado\n• 1 colher (chá) de sal</string>
+    <string name="pao_de_queijo_preparo">1. Ferva o leite com o óleo e o sal e despeje sobre o polvilho.\n2. Espere amornar e misture os ovos e o queijo.\n3. Faça bolinhas e asse a 180 °C por 25 minutos.</string>
+    <string name="bolo_de_cenoura_ingredientes">• 3 cenouras médias\n• 3 ovos\n• 1 xícara de óleo\n• 2 xícaras de açúcar\n• 2 xícaras de farinha de trigo\n• 1 colher (sopa) de fermento em pó</string>
+    <string name="bolo_de_cenoura_preparo">1. Bata no liquidificador as cenouras, os ovos e o óleo.\n2. Misture o açúcar, a farinha e, por último, o fermento.\n3. Asse a 180 °C por 40 minutos.</string>
+    <string name="pudim_ingredientes">• 1 xícara de açúcar, para a calda\n• 1 lata de leite condensado\n• 2 latas de leite (use a lata como medida)\n• 3 ovos</string>
+    <string name="pudim_preparo">1. Derreta o açúcar na fôrma até virar caramelo.\n2. Bata no liquidificador o leite condensado, o leite e os ovos e despeje na fôrma.\n3. Asse em banho-maria a 180 °C por 1 hora e desenforme gelado.</string>
+    <string name="coxinha_ingredientes">• 500 g de peito de frango cozido e desfiado\n• 2 xícaras do caldo do frango\n• 2 xícaras de farinha de trigo\n• 1 colher (sopa) de manteiga\n• 1 ovo e farinha de rosca, para empanar\n• Óleo, para fritar</string>
+    <string name="coxinha_preparo">1. Ferva o caldo com a manteiga, junte a farinha de uma vez e mexa até soltar da panela.\n2. Abra a massa na mão, recheie com o frango e modele a coxinha.\n3. Passe no ovo e na farinha de rosca e frite em óleo quente.</string>
+    <string name="acai_ingredientes">• 400 g de polpa de açaí congelada\n• 1 banana\n• 2 colheres (sopa) de xarope de guaraná\n• Granola e frutas, para servir</string>
+    <string name="acai_preparo">1. Bata no liquidificador a polpa, a banana e o xarope até ficar cremoso.\n2. Sirva na tigela.\n3. Cubra com granola e frutas.</string>
+
+    <!-- Compartilhar -->
+    <string name="compartilhar">Compartilhar</string>
+
+    <!-- Receita favorita -->
+    <string name="favoritar">☆ Favoritar</string>
+    <string name="sua_favorita">★ Sua favorita</string>
+    <string name="favoritada">Receita favorita atualizada</string>
+    <string name="desfazer">Desfazer</string>
+    <string name="trocar_titulo">Trocar a favorita?</string>
+    <string name="trocar_texto">O livro guarda uma favorita só. Hoje ela é: %1$s.</string>
+    <string name="trocar">Trocar</string>
+    <string name="cancelar">Cancelar</string>
+</resources>

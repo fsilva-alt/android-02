@@ -14,18 +14,18 @@ A calculadora ganhou um segundo campo, feito com o mesmo composable do primeiro.
 - O par `valor` e `aoMudar`.
 :::
 :::card Projeto
-- Abra `exercicios/07-um-campo-dois-usos`.
+- Abra `exercicios/06-um-campo-dois-usos`.
 - App **Docinhos**, com dois `CampoNumero` e o total parado em 0.
 :::
 ::::
 
 <div class="phones">
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/07-antes.png" alt="Tela do Docinhos com 20 convidados e 4 docinhos por convidado digitados e o total de 0 brigadeiros"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/06-antes.png" alt="Tela do Docinhos com 20 convidados e 4 docinhos por convidado digitados e o total de 0 brigadeiros"></div></div>
 <figcaption>Como começa: os campos guardam o texto, a tela não fica sabendo.</figcaption>
 </figure>
 <figure class="figure">
-<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/07-depois.png" alt="Tela do Docinhos com 20 convidados, 5 docinhos por convidado e o total de 100 brigadeiros"></div></div>
+<div class="phone"><div class="status"><span>12:00</span><span>▾ ◢ ▮</span></div><div class="screen"><img src="assets/telas/06-depois.png" alt="Tela do Docinhos com 20 convidados, 5 docinhos por convidado e o total de 100 brigadeiros"></div></div>
 <figcaption>Como fica: a tela é dona dos dois valores e faz a conta.</figcaption>
 </figure>
 </div>

@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Docinhos</string>
-    <string name="convidados">Convidados</string>
-    <string name="brigadeiros">brigadeiros</string>
-    <string name="latas">Latas de leite condensado: %1$s</string>
-    <string name="por_convidado">Docinhos por convidado</string>
-    <string name="latas_inteiras">Só latas inteiras</string>
-</resources>

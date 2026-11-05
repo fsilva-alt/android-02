@@ -43,14 +43,8 @@ fun PratoDoDia(modifier: Modifier = Modifier) {
     // TODO 2: transforme em estado, para a tela perceber quando o valor muda
     var prato = 1
 
-    val imagem = when (prato) {
-        1 -> R.drawable.brigadeiro
-        2 -> R.drawable.pao_de_queijo
-        3 -> R.drawable.bolo_de_cenoura
-        4 -> R.drawable.pudim
-        5 -> R.drawable.coxinha
-        else -> R.drawable.acai
-    }
+    // TODO 3: escolha a imagem de acordo com o número sorteado
+    val imagem = R.drawable.brigadeiro
     val nome = when (prato) {
         1 -> R.string.brigadeiro
         2 -> R.string.pao_de_queijo
