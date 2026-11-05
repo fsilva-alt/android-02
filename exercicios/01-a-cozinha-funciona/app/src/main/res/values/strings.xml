@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cozinha</string>
+    <string name="cozinha_de">Cozinha de %1$s</string>
+    <string name="tudo_pronto">Tudo pronto para começar.</string>
+</resources>

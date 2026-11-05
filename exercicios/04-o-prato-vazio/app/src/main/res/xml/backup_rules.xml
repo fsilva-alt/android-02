@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   Exemplo de regras de backup; tire o comentário e ajuste se precisar.
+   Detalhes em https://developer.android.com/guide/topics/data/autobackup
+   Este arquivo é ignorado em aparelhos anteriores à API 31:
+   https://developer.android.com/about/versions/12/backup-restore
+-->
+<full-backup-content>
+    <!--
+   <include domain="sharedpref" path="."/>
+   <exclude domain="sharedpref" path="device.xml"/>
+-->
+</full-backup-content>

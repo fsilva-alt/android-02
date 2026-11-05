@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Brigadeiro</string>
+    <string name="passo_n">Passo %1$d de 4</string>
+    <string name="passo_1">Leite condensado, chocolate e manteiga na panela.</string>
+    <string name="passo_2">Mexa em fogo baixo até soltar do fundo.</string>
+    <string name="passo_3">Deixe esfriar e enrole as bolinhas.</string>
+    <string name="passo_4">Passe no granulado. Está pronto!</string>
+    <string name="toque">Toque na imagem para continuar</string>
+    <string name="faltam">Mexidas que faltam: %1$d</string>
+</resources>

@@ -1,0 +1,68 @@
+# Gera o index.html do curso com o coursekit e o disponibiliza para download.
+#
+# Execução manual: Actions → "Build do curso" → Run workflow.
+#   • Sempre: o index.html fica como artefato da execução (Summary → Artifacts).
+#   • Opcional: informe uma tag (ex.: v1.0) para também publicar um Release com o index.html
+#     anexado. O Release dá um link de download fixo, prático para distribuir aos alunos.
+#
+# O coursekit é público: o checkout usa o GITHUB_TOKEN padrão, sem segredo adicional.
+name: Build do curso
+
+on:
+  workflow_dispatch:
+    inputs:
+      coursekit_ref:
+        description: Branch, tag ou commit do coursekit
+        required: false
+        default: main
+      release_tag:
+        description: "Opcional: tag de um Release para anexar o index.html (ex.: v1.0). Vazio = só o artefato."
+        required: false
+        default: ""
+
+permissions:
+  contents: write   # leitura para o build; escrita só é usada pelo Release opcional
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o curso
+        uses: actions/checkout@v5
+        with:
+          path: curso
+
+      # build.sh procura o coursekit ao lado do curso (../coursekit)
+      - name: Baixar o coursekit
+        uses: actions/checkout@v5
+        with:
+          repository: fsilva-alt/coursekit
+          ref: ${{ inputs.coursekit_ref }}
+          path: coursekit
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      # "Última atualização" usa a data dos arquivos: use a do último commit, não a do checkout.
+      - name: Datar os capítulos pelo último commit
+        working-directory: curso
+        run: find course.yml chapters -name '*.md' -o -name course.yml | xargs touch -d "$(git log -1 --format=%cI)"
+
+      - name: Gerar index.html
+        run: sh ./curso/build.sh --strict
+
+      - name: Guardar index.html como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.repository.name }}
+          path: curso/dist/index.html
+          if-no-files-found: error
+
+      - name: Publicar Release com o index.html (opcional)
+        if: inputs.release_tag != ''
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.release_tag }}
+          name: Curso ${{ inputs.release_tag }}
+          files: curso/dist/index.html

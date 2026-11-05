@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Livro de Receitas</string>
+    <string name="receita_n">Receita %1$d de 6</string>
+    <string name="brigadeiro">Brigadeiro</string>
+    <string name="pao_de_queijo">Pão de queijo</string>
+    <string name="bolo_de_cenoura">Bolo de cenoura</string>
+    <string name="pudim">Pudim de leite</string>
+    <string name="coxinha">Coxinha</string>
+    <string name="acai">Açaí na tigela</string>
+    <string name="brigadeiro_detalhes">30 unidades · 25 min</string>
+    <string name="pao_de_queijo_detalhes">25 unidades · 40 min</string>
+    <string name="bolo_de_cenoura_detalhes">8 porções · 50 min</string>
+    <string name="pudim_detalhes">10 fatias · 1 h 30 min</string>
+    <string name="coxinha_detalhes">30 unidades · 1 h 30 min</string>
+    <string name="acai_detalhes">2 tigelas · 10 min</string>
+    <string name="anterior">Anterior</string>
+    <string name="proxima">Próxima</string>
+</resources>

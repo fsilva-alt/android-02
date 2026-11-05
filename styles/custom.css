@@ -1,0 +1,238 @@
+/* Estilos deste curso. São inseridos depois do tema base do coursekit, então podem
+   (1) redefinir tokens e (2) adicionar classes usadas nos capítulos. */
+
+/* 1. Tokens ---------------------------------------------------------------- */
+:root {
+  --content-w: 900px;        /* coluna de leitura um pouco mais estreita */
+}
+
+/* Sem ligaturas no código: fontes como Cascadia Code e Fira Code desenham "->" como
+   uma seta e "!=" como "≠", o que confunde quem está aprendendo a digitar esses símbolos. */
+.prose code, .prose pre, .prose kbd {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0, "dlig" 0;
+}
+
+/* 2. Texto ----------------------------------------------------------------- */
+.prose .lead {
+  font-size: 1.14em;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+/* Legenda de origem das figuras oficiais (texto menor e discreto). */
+.prose .figure figcaption .src {
+  display: block;
+  margin-top: .25rem;
+  font-size: .8em;
+  opacity: .8;
+}
+
+/* 3. Botão "Baixar imagem" (criado por scripts/custom.js) ------------------- */
+.prose .download-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin: .75rem 0 0;
+}
+.prose .download-row .button {
+  gap: .4rem;
+  font-size: .95rem;
+}
+.prose .download-row .button svg {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+}
+.prose .download-row .button .size {
+  font-weight: 400;
+  opacity: .75;
+}
+.prose .figure .download-row { margin-bottom: .5rem; }
+
+/* 4. Mockups de celular ---------------------------------------------------- */
+/* Um "celular" de 280 px de largura. Medidas em dp foram convertidas para px
+   com o fator aproximado 0,68 (tela de 411 dp de largura). */
+.prose .phone {
+  position: relative;
+  box-sizing: border-box;
+  width: 280px;
+  max-width: 100%;
+  aspect-ratio: 9 / 18.5;
+  margin: 0 auto;
+  border: 8px solid #202124;
+  border-radius: 28px;
+  background: #fff;
+  color: #1c1b1f;
+  overflow: hidden;
+  font-family: Roboto, "Segoe UI", system-ui, -apple-system, sans-serif;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .18);
+}
+.prose .phone p { margin: 0; }
+.prose .phone .status {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+  padding: 0 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.prose .phone .screen { position: absolute; inset: 0; }
+.prose .phone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: auto;
+}
+
+/* Painel "Preview" do Android Studio: só o composable, sem o aparelho. */
+.prose .preview-panel {
+  display: inline-block;
+  max-width: 100%;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: #1c1b1f;
+  font-family: Roboto, "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+.prose .preview-panel p { margin: 0; }
+
+/* EmptyApp: "Hello Android!" encostado no canto superior esquerdo. */
+.prose .m-hello {
+  position: absolute;
+  top: 24px; left: 0;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: .3px;
+}
+
+/* Greeting Card: Surface ciano envolvendo o texto. */
+.prose .m-cyan {
+  position: absolute;
+  top: 0; left: 0;
+  padding: 40px 16px 32px;        /* innerPadding (status e navegação) + 24 dp */
+  background: #00ffff;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: .3px;
+}
+.prose .preview-panel .m-cyan-preview {
+  display: inline-block;
+  padding: 24px;
+  background: #00ffff;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Happy Birthday (texto): Column centralizada verticalmente. */
+.prose .m-hb {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 11px 11px;
+}
+.prose .m-hb .msg {
+  font-size: 50px;
+  line-height: 64px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.prose .m-hb .from {
+  align-self: flex-end;
+  margin-top: 4px;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+/* Happy Birthday (imagem): foto ao fundo com 80 % de opacidade e texto dourado. */
+.prose .m-hb2 { position: absolute; inset: 0; background: #fff; }
+.prose .m-hb2 img { opacity: .8; }
+.prose .m-hb2 .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11px;
+  color: #f2c66d;
+}
+.prose .m-hb2 .msg {
+  padding: 20px;
+  font-size: 44px;
+  line-height: 60px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.prose .m-hb2 .from {
+  align-self: flex-end;
+  padding-right: 37px;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+/* Business Card: Column com SpaceEvenly. */
+.prose .m-bc {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 24px;
+}
+.prose .m-bc .photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prose .m-bc .photo img {
+  width: 136px;                   /* size(200.dp) */
+  height: 136px;
+  margin: 0 0 11px;               /* Spacer de 16 dp */
+  object-fit: cover;              /* ContentScale.Crop */
+  border-radius: 50%;             /* clip(CircleShape) */
+  border: 3px solid #9e9e9e;      /* border(4.dp, Color.Gray, CircleShape) */
+}
+.prose .m-bc .name { font-size: 41px; line-height: 48px; padding: 7px; }
+.prose .m-bc .title { font-size: 20px; line-height: 26px; }
+.prose .m-bc .contacts { display: flex; flex-direction: column; gap: 6px; }
+.prose .m-bc .row { display: flex; align-items: center; gap: 7px; font-size: 14px; line-height: 20px; }
+.prose .m-bc .row svg { width: 16px; height: 16px; fill: #1c1b1f; flex: none; }
+
+/* Dois mockups lado a lado (antes/depois). */
+.prose .phones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.prose .phones figure { margin: 0; flex: 0 1 280px; }
+
+/* 5. Tabela de arquivos do projeto ------------------------------------------ */
+.prose .files td:first-child { white-space: nowrap; }
+
+/* 6. Confetes no fim do curso (scripts/custom.js) --------------------------- */
+.confetti {
+  position: fixed;
+  top: -12px;
+  z-index: 90;
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  pointer-events: none;
+  animation: confetti-fall var(--fall, 2.4s) cubic-bezier(.2, .6, .4, 1) forwards;
+}
+@keyframes confetti-fall {
+  to { transform: translate(var(--drift, 0), 105vh) rotate(var(--spin, 540deg)); opacity: .9; }
+}

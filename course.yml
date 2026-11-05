@@ -1,0 +1,36 @@
+# Introdução ao Desenvolvimento Nativo · Parte 2: botões, estado, campos de texto e testes
+# no Jetpack Compose. Todas as opções estão documentadas em
+# coursekit/templates/starter/course.yml.
+
+title: Introdução ao Desenvolvimento Nativo · Parte 2
+subtitle: Apps que respondem ao toque. Um conceito por módulo, sempre com um desafio em um projeto que já vem pela metade.
+description: >
+  Continuação do curso de Android com Kotlin e Jetpack Compose. Em 12 módulos curtos, 3 deles
+  opcionais, você termina quatro apps de receitas brasileiras: **Prato do Dia**, **Brigadeiro**,
+  **Docinhos** e **Livro de Receitas**. Cada módulo explica um conceito e termina com um
+  desafio de poucas linhas em um projeto do Android Studio.
+authors:
+  - Felipe Araujo
+updated: auto             # data do capítulo editado mais recentemente
+language: pt-BR           # interface em português
+
+accent: "#0f7b4f"         # verde escuro (modo claro), o mesmo da Parte 1
+accent_dark: "#3ddc84"    # verde Android (modo escuro)
+logo: assets/logo.svg     # também usado como favicon
+
+numbering: course         # o número do capítulo é o número do módulo e da pasta em exercicios/
+transition: none
+highlight: true           # realce de sintaxe em tempo de build
+line_numbers: false
+
+# As partes são descobertas a partir das subpastas de chapters/ (cada uma com um _part.yml).
+
+styles:
+  - styles/custom.css       # o mesmo da Parte 1
+scripts:
+  - scripts/custom.js       # o mesmo da Parte 1
+
+slug: android-02          # chave do progresso salvo (o CI gera o curso em outra pasta)
+
+labels:
+  course_complete: "Você concluiu o curso. Os quatro apps estão prontos no seu emulador."

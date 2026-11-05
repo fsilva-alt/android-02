@@ -1,0 +1,19 @@
+# Fins de linha. O repositório guarda LF, e cada arquivo sai no formato que o seu uso exige,
+# qualquer que seja o sistema ou o core.autocrlf de quem clona (ou baixa o ZIP).
+* text=auto
+
+# Scripts de shell (wrapper do Gradle, build.sh): sempre LF, ou não rodam no Git Bash, WSL, Linux e macOS.
+gradlew   text eol=lf
+*.sh      text eol=lf
+
+# Scripts do Windows: sempre CRLF.
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+
+# O instalador é baixado direto do GitHub (raw), que entrega o arquivo como está guardado.
+# Sem conversão, ele fica guardado com CRLF, como o cmd.exe espera.
+install.cmd  -text !eol
+
+# Binários: nunca converter.
+*.jar     binary
+*.png     binary

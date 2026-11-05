@@ -1,0 +1,11 @@
+# Regras do R8 proprias deste projeto.
+# O AGP junta todos os arquivos de src/main/keepRules e os entrega ao R8.
+#
+# Mais detalhes:
+#   https://d.android.com/r/tools/r8/keep-rules
+
+# Se o projeto usar WebView com JavaScript, tire o comentario das linhas abaixo
+# e informe o nome completo da classe da interface JavaScript:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
