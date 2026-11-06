@@ -219,7 +219,7 @@
 }
 .prose .phones figure { margin: 0; flex: 0 1 280px; }
 
-/* Celular deitado (módulo 12): a mesma moldura, com a tela na horizontal. */
+/* Celular deitado (módulo 13): a mesma moldura, com a tela na horizontal. */
 .prose .phone.deitado { width: 560px; aspect-ratio: 18.5 / 9; }
 .prose .phones figure.deitada { flex: 0 1 560px; }
 

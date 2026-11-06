@@ -5,7 +5,7 @@ duration: 5
 # Resumo e próximos passos
 
 :::success Parabéns!
-Você concluiu a **Parte 2**: apps que respondem ao toque, com estado, campos de texto, mais de uma tela, avisos e memória.
+Você concluiu a **Parte 2**: apps que respondem ao toque, com estado, campos de texto e mais de uma tela.
 :::
 
 ## O que você aprendeu
@@ -15,7 +15,7 @@ Você concluiu a **Parte 2**: apps que respondem ao toque, com estado, campos de
 | Prato do Dia | [O botão Sortear](#o-botao-sortear), [O prato vazio](#o-prato-vazio) (opcional) | `Button`, `onClick`, `random()`, recomposição, `remember`, `mutableStateOf`, `when`, estado mínimo, depurador |
 | Brigadeiro | [Toque na panela](#toque-na-panela) (opcional) | `Modifier.clickable`, ordem dos modificadores, `if` como expressão, dois estados |
 | Docinhos | [Quantos convidados?](#quantos-convidados), [Um campo, dois usos](#um-campo-dois-usos), [Só latas inteiras](#so-latas-inteiras), [A conta está certa?](#a-conta-esta-certa) (opcional) | `TextField`, `toIntOrNull()`, `?:`, elevação de estado, `KeyboardOptions`, `Switch`, `ceil`, teste local, teste de interface |
-| Livro de Receitas | [Livro de receitas](#livro-de-receitas) (opcional), [Duas telas](#duas-telas), [Favoritei!](#favoritei), [Girou, sumiu](#girou-sumiu) | Navigation 3, chaves, pilha de telas, dados na chave, `Intent` de compartilhamento, `Snackbar`, corrotina, `AlertDialog`, mudança de configuração, `rememberSaveable` |
+| Livro de Receitas | [Livro de receitas](#livro-de-receitas) (opcional), [Duas telas](#duas-telas), [Qual receita?](#qual-receita), [Favoritei!](#favoritei) (opcional), [Girou, sumiu](#girou-sumiu) (opcional) | Navigation 3, chaves, pilha de telas, dados na chave, `Intent` de compartilhamento, `Snackbar`, corrotina, `AlertDialog`, mudança de configuração, `rememberSaveable` |
 
 ## Glossário
 
@@ -92,5 +92,9 @@ Teste de interface
 - [ ] Você sabe explicar por que `var prato = 1` não atualiza a tela.
 - [ ] Você sabe dizer onde mora o estado de um `TextField`.
 - [ ] Você sabe o que muda na pilha quando uma tela abre e quando o usuário volta.
+- [ ] Você sabe como uma tela recebe um dado da outra.
+
+Se você fez os módulos opcionais do Livro de Receitas:
+
 - [ ] Você sabe quando avisar com um `Snackbar` e quando perguntar com um `AlertDialog`.
 - [ ] Você sabe dizer o que se perde ao girar a tela, e como evitar.

@@ -13,7 +13,7 @@ Na Parte 1 você montou telas. Aqui elas passam a **responder**: botões, campos
 
 ::::columns
 :::card Módulos curtos
-São 12 módulos, 4 deles opcionais. Cada um explica **uma** ideia, ou duas que andam juntas, e termina com um desafio de poucas linhas.
+São 13 módulos, 6 deles opcionais. Cada um explica **uma** ideia, ou duas que andam juntas, e termina com um desafio de poucas linhas.
 :::
 :::card Projetos pela metade
 Você não cria projetos do zero. Cada desafio parte de um projeto que já tem a tela montada e deixa faltando só o assunto do módulo.
@@ -36,7 +36,7 @@ A receita em quatro passos, avançando com toques na imagem. `clickable` e dois 
 Calcula os brigadeiros de uma festa. `TextField`, teclado, `Switch` e testes. Módulos 5 a 8.
 :::
 :::card Livro de Receitas
-Seis receitas, uma tela para cada uma e uma favorita. Navegação, `Snackbar`, diálogo e estado que resiste ao giro do aparelho. Módulos 9 a 12.
+Seis receitas e uma tela para cada uma. Navegação e dados entre telas. Nos opcionais, uma favorita: `Snackbar`, diálogo e estado que resiste ao giro do aparelho. Módulos 9 a 13.
 :::
 ::::
 
@@ -174,10 +174,10 @@ Na Parte 1 o código ficou em inglês, como nos modelos do Android Studio. Aqui,
 | --- | --- |
 | **Conhecimento** | A Parte 1: composables, `Text`, `Image`, `Column`, `Modifier` e recursos. |
 | **Android Studio** | O mesmo da Parte 1, com um emulador criado ou um celular com depuração USB. |
-| **Tempo** | Cerca de 2h20. Com os quatro módulos opcionais, 3h35. |
+| **Tempo** | Cerca de 1h50. Com os seis módulos opcionais, 3h40. |
 
 :::note Sobre o curso oficial
-Este curso segue a **Unidade 2** do [Android Basics with Compose](https://developer.android.com/courses/android-basics-compose/course?hl=pt-br), trilhas [Add a button to an app](https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-2?hl=pt-br) e [Interacting with UI and state](https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-3?hl=pt-br), com outros apps: sai o dado, entram as receitas. Os três últimos módulos vão além: navegação, avisos e estado salvo, assuntos que o curso oficial deixa para a Unidade 4.
+Este curso segue a **Unidade 2** do [Android Basics with Compose](https://developer.android.com/courses/android-basics-compose/course?hl=pt-br), trilhas [Add a button to an app](https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-2?hl=pt-br) e [Interacting with UI and state](https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-3?hl=pt-br), com outros apps: sai o dado, entram as receitas. Os quatro últimos módulos vão além: navegação, dados entre telas, avisos e estado salvo, assuntos que o curso oficial deixa para a Unidade 4.
 :::
 
 [Começar: o botão Sortear](02-prato-do-dia/01-o-botao-sortear.md){.button}

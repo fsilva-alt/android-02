@@ -1,7 +1,7 @@
 package com.example.livrodereceitas
 
 // O que muda de uma receita para outra, escolhido pelo número da receita (de 1 a 6).
-// São os when do módulo 12, agora em funções, para as duas telas usarem.
+// São os when do módulo 9, agora em funções, para as duas telas usarem.
 
 fun imagemDa(receita: Int): Int {
     return when (receita) {

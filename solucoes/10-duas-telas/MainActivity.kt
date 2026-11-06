@@ -17,7 +17,7 @@ import com.example.livrodereceitas.ui.theme.ReceitasTheme
 
 // As chaves: uma para cada tela do app.
 data object Livro
-data class Receita(val numero: Int)
+data object Receita
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,12 +44,13 @@ fun LivroApp() {
             entryProvider = entryProvider {
                 entry<Livro> {
                     TelaLivro(
-                        aoVerReceita = { numero -> pilha.add(Receita(numero)) }
+                        aoVerReceita = { pilha.add(Receita) }
                     )
                 }
-                entry<Receita> { chave ->
+                entry<Receita> {
+                    // Por enquanto, sempre a receita 1. O módulo 11 resolve.
                     TelaReceita(
-                        numero = chave.numero,
+                        numero = 1,
                         aoVoltar = { pilha.removeLastOrNull() }
                     )
                 }
